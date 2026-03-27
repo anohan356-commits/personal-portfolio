@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-surface-dim: #100c1a;
+  --color-surface-container: #1c1729;
+  --color-surface-container-low: #151121;
+  --color-surface-container-high: #221d30;
+  --color-surface-container-highest: #282238;
+  --color-surface-bright: #2f2940;
+  --color-surface-variant: #282238;
+  
+  --color-primary: #dc8fff;
+  --color-primary-dim: #b326f5;
+  --color-secondary: #ff6f79;
+  --color-tertiary: #ffd39a;
+  --color-tertiary-fixed: #fdc16f;
+  
+  --color-on-surface: #ede4fa;
+  --color-on-surface-variant: #afa8bc;
+  --color-outline-variant: #4a4556;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface-dim text-on-surface font-sans selection:bg-primary selection:text-black;
+  }
+}
+
+@layer utilities {
+  .sunset-gradient {
+    background: linear-gradient(135deg, #dc8fff 0%, #ff6f79 100%);
+  }
+  
+  .sunset-text {
+    background: linear-gradient(135deg, #dc8fff 0%, #ff6f79 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .glass-panel {
+    background: rgba(40, 34, 56, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(74, 69, 86, 0.2);
+  }
+  
+  .text-glow {
+    filter: drop-shadow(0 0 15px rgba(220, 143, 255, 0.5));
+  }
+}
